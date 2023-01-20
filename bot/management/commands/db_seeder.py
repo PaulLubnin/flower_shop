@@ -18,7 +18,7 @@ def db_seeder_flower():
     images = glob.glob("./media/*")
     flower_prices = [1000, 1250, 1500, 2000, 3500, 5500, 7500, 11000]
     flower_types = ['Розы', 'Гвоздики', 'Хризантема', 'Пионы', 'Альстромерии', 'Астра', 'Азалия', 'Лютик']
-    flower_categories = ['С днем рождения!', '8 марта', 'В день свадьбы', 'С годовщиной!']
+    flower_categories = ['День рождение', '8 марта', 'Свадьба', 'Рождение']
     for image_number, image_path in enumerate(images):
         flower = Flower.objects.create(
             title = f'Букет #{image_number}',
