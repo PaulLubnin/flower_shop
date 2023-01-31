@@ -216,7 +216,9 @@ class Command(BaseCommand):
                 await Global.person_data.set()
 
         # Регистрация
-        @dp.message_handler(lambda message: message.text.isdigit(), state=Global.registration_name)
+
+        @dp.message_handler(lambda message: message.text.count(' ') < 1 or message.text.count(' ') > 2,
+                            state=Global.registration_name)
         async def get_valid_name(message: types.Message):
             await message.reply(
                 'Введите правильное имя')
